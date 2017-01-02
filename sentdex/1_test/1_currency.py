@@ -11,7 +11,7 @@ style.use('ggplot')
 
 
 # - Start and end dates
-start = datetime.datetime(2012, 1, 1)
+start = datetime.datetime(2014, 1, 1)
 end   = datetime.datetime(2016, 12, 1)
 
 # - Get USD/GBP and USD/HUF rates from Yahoo! Finance
@@ -40,8 +40,8 @@ df_gbp.reset_index(inplace=True,drop=False)
 dates = np.array( df_gbp['Date'] )
 
 # - Create HUF/GBP cross exchange rate
-gbp2huf = huf/gbp[:1280]
+gbp2huf = huf/gbp[:761]
 
 # - Plot
-plt.plot( dates[:1280], gbp2huf  )
+plt.plot( dates[:761], gbp2huf  )
 plt.show()
